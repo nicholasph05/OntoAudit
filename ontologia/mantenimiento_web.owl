@@ -5,7 +5,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontologia="https://nicholasph05.github.io/OntoAudit/ontologia#">
     <owl:Ontology rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia"/>
     
 
@@ -373,6 +374,144 @@
 
     <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Preventivo">
         <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#NivelMantenimiento"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaCargaLenta -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaCargaLenta">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <ontologia:incumplePractica rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaCargaRapida"/>
+        <ontologia:sugiereAccion rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#RecOptimizarCarga"/>
+        <ontologia:explicacion>La página tarda más de 3 segundos en cargar y la mayoría de visitantes la abandona antes de verla.</ontologia:explicacion>
+        <ontologia:metrica>tiempo_carga</ontologia:metrica>
+        <ontologia:umbral rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</ontologia:umbral>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaErroresSintaxis -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaErroresSintaxis">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <ontologia:incumplePractica rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaHTMLValido"/>
+        <ontologia:sugiereAccion rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#RecCorregirHTML"/>
+        <ontologia:explicacion>El HTML tiene errores; cada navegador puede mostrar la página distinto y los lectores de pantalla se confunden.</ontologia:explicacion>
+        <ontologia:metrica>errores_sintaxis</ontologia:metrica>
+        <ontologia:umbral rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</ontologia:umbral>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaImagenesSinAlt -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaImagenesSinAlt">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <ontologia:incumplePractica rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaTextoAlternativo"/>
+        <ontologia:sugiereAccion rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarAlt"/>
+        <ontologia:explicacion>Hay imágenes sin texto alternativo; las personas que usan lector de pantalla no saben qué muestran.</ontologia:explicacion>
+        <ontologia:metrica>img_sin_alt_pct</ontologia:metrica>
+        <ontologia:umbral rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</ontologia:umbral>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaPaginaPesada -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaPaginaPesada">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <ontologia:incumplePractica rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaPaginaLiviana"/>
+        <ontologia:sugiereAccion rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#RecReducirPeso"/>
+        <ontologia:explicacion>La página pesa más de 2 MB; consume muchos datos y carga lento en celulares.</ontologia:explicacion>
+        <ontologia:metrica>peso_pagina_mb</ontologia:metrica>
+        <ontologia:umbral rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</ontologia:umbral>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaSinMetaDescripcion -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaSinMetaDescripcion">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <ontologia:incumplePractica rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaMetaDescripcion"/>
+        <ontologia:sugiereAccion rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarMetaDescripcion"/>
+        <ontologia:explicacion>No hay descripción; el buscador muestra un fragmento al azar y la página recibe menos clics.</ontologia:explicacion>
+        <ontologia:metrica>sin_meta_descripcion</ontologia:metrica>
+        <ontologia:umbral rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</ontologia:umbral>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaSinTitulo -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaSinTitulo">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <ontologia:incumplePractica rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaTituloDescriptivo"/>
+        <ontologia:sugiereAccion rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarTitulo"/>
+        <ontologia:explicacion>La página no tiene título; los buscadores no saben cómo mostrarla en sus resultados.</ontologia:explicacion>
+        <ontologia:metrica>sin_titulo</ontologia:metrica>
+        <ontologia:umbral rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</ontologia:umbral>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarAlt -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarAlt">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <ontologia:pasosSolucion>Agrega a cada imagen un atributo alt que describa lo que muestra; si es decorativa, usa alt vacío.</ontologia:pasosSolucion>
+        <ontologia:prioridad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ontologia:prioridad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarMetaDescripcion -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarMetaDescripcion">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <ontologia:pasosSolucion>Agrega una meta description con un resumen de 120 a 160 caracteres.</ontologia:pasosSolucion>
+        <ontologia:prioridad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ontologia:prioridad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarTitulo -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#RecAgregarTitulo">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <ontologia:pasosSolucion>Agrega en el head una etiqueta title única de 50 a 60 caracteres que describa la página.</ontologia:pasosSolucion>
+        <ontologia:prioridad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ontologia:prioridad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#RecCorregirHTML -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#RecCorregirHTML">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <ontologia:pasosSolucion>Revisa la página en validator.w3.org y corrige etiquetas sin cerrar y atributos duplicados.</ontologia:pasosSolucion>
+        <ontologia:prioridad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ontologia:prioridad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#RecOptimizarCarga -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#RecOptimizarCarga">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <ontologia:pasosSolucion>Comprime las imágenes, activa la caché del servidor y carga los scripts con defer.</ontologia:pasosSolucion>
+        <ontologia:prioridad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ontologia:prioridad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#RecReducirPeso -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#RecReducirPeso">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <ontologia:pasosSolucion>Convierte las imágenes a WebP, elimina librerías que no uses y minifica el CSS y el JavaScript.</ontologia:pasosSolucion>
+        <ontologia:prioridad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ontologia:prioridad>
     </owl:NamedIndividual>
     
 
