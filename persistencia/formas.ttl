@@ -1,0 +1,47 @@
+# Etapa 6: formas SHACL. Reglas que todo informe debe cumplir antes de guardarse.
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix earl:   <http://www.w3.org/ns/earl#> .
+@prefix oa:     <https://nicholasph05.github.io/OntoAudit/ontologia#> .
+@prefix f:      <https://nicholasph05.github.io/OntoAudit/formas#> .
+
+f:FormaAuditoria a sh:NodeShape ;
+    sh:targetClass oa:Auditoria ;
+    sh:property [
+        sh:path oa:analizaSitio ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class oa:SitioWeb ; sh:node f:FormaSitio ;
+        sh:message "Cada auditoría analiza exactamente un sitio web." ] ;
+    sh:property [
+        sh:path oa:puntajeDifuso ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 100 ;
+        sh:message "El puntaje difuso debe ser un decimal entre 0 y 100." ] ;
+    sh:property [
+        sh:path schema:dateCreated ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "La auditoría debe tener una fecha (xsd:dateTime)." ] ;
+    sh:property [
+        sh:path schema:hasPart ; sh:minCount 6 ;
+        sh:class earl:Assertion ; sh:node f:FormaAsercion ;
+        sh:message "La auditoría debe incluir las 6 aserciones EARL." ] .
+
+f:FormaSitio a sh:NodeShape ;
+    sh:property [
+        sh:path schema:url ; sh:minCount 1 ; sh:nodeKind sh:IRI ;
+        sh:message "El sitio debe tener una URL." ] ;
+    sh:property [
+        sh:path oa:tieneNivel ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( oa:Urgente oa:Preventivo oa:AlDia ) ;
+        sh:message "El nivel debe ser Urgente, Preventivo o AlDia." ] ;
+    sh:property [
+        sh:path oa:tieneEstado ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( oa:Critico oa:Aceptable oa:Excelente ) ;
+        sh:message "El estado debe ser Critico, Aceptable o Excelente." ] .
+
+f:FormaAsercion a sh:NodeShape ;
+    sh:property [ sh:path earl:test ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path earl:subject ; sh:minCount 1 ] ;
+    sh:property [
+        sh:path ( earl:result earl:outcome ) ; sh:minCount 1 ;
+        sh:in ( earl:passed earl:failed ) ;
+        sh:message "Cada aserción debe tener resultado passed o failed." ] .

@@ -54,8 +54,21 @@ class Plataforma:
                 await asyncio.wait_for(self._servidor_tarea, timeout=3)
 
 
+def guardado_disponible():
+    """Usa MongoDB si está encendido; si no, guarda en memoria."""
+    try:
+        from persistencia.repositorio import Repositorio
+        repo = Repositorio()
+        repo.cliente.admin.command("ping")
+        print("Guardando en MongoDB (base 'ontoaudit', colección 'auditorias')")
+        return repo.guardar_informe
+    except Exception as e:
+        print(f"MongoDB no disponible ({type(e).__name__}); se guarda en memoria")
+        return guardar_en_memoria
+
+
 async def _demo(url: str):
-    plataforma = Plataforma()
+    plataforma = Plataforma(guardar=guardado_disponible())
     await plataforma.iniciar()
     try:
         r = await plataforma.auditar(url)
