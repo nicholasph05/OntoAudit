@@ -1,0 +1,9 @@
+rdflib
+owlrl
+pyshacl
+numpy
+scipy
+networkx
+scikit-fuzzy
+matplotlib
+pytest
