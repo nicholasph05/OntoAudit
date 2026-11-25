@@ -7,3 +7,6 @@ networkx
 scikit-fuzzy
 matplotlib
 pytest
+requests
+beautifulsoup4
+html5lib
