@@ -13,6 +13,196 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#analizaSitio -->
+
+    <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#analizaSitio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Auditoria"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#atiendeProblema -->
+
+    <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#atiendeProblema">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#sugiereAccion"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#incumplePractica -->
+
+    <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#incumplePractica">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#BuenasPracticas"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#presentaProblema -->
+
+    <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#presentaProblema">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#sugiereAccion -->
+
+    <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#sugiereAccion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#tieneEstado -->
+
+    <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#tieneEstado">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#EstadoSitio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#tieneNivel -->
+
+    <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#tieneNivel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#NivelMantenimiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#explicacion -->
+
+    <owl:DatatypeProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#explicacion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#fecha -->
+
+    <owl:DatatypeProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#fecha">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Auditoria"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#metrica -->
+
+    <owl:DatatypeProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#metrica">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#pasosSolucion -->
+
+    <owl:DatatypeProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#pasosSolucion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#prioridad -->
+
+    <owl:DatatypeProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#prioridad">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#puntajeDifuso -->
+
+    <owl:DatatypeProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#puntajeDifuso">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Auditoria"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#umbral -->
+
+    <owl:DatatypeProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#umbral">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#url -->
+
+    <owl:DatatypeProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#url">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
