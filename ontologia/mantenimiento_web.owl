@@ -259,6 +259,17 @@
     <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaAccesibilidad -->
 
     <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaAccesibilidad">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#incumplePractica"/>
+                        <owl:someValuesFrom rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Accesibilidad"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
     </owl:Class>
     
@@ -267,6 +278,17 @@
     <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaRendimiento -->
 
     <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaRendimiento">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#incumplePractica"/>
+                        <owl:someValuesFrom rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Rendimiento"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
     </owl:Class>
     
@@ -631,22 +653,22 @@
     
 
 
-    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#Urgente -->
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#SitioEjemplo -->
 
-    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Urgente">
-        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#NivelMantenimiento"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#sitioEjemplo -->
-
-    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#sitioEjemplo">
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SitioEjemplo">
         <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
         <ontologia:presentaProblema rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaCargaLenta"/>
         <ontologia:presentaProblema rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaImagenesSinAlt"/>
         <ontologia:tieneNivel rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Urgente"/>
         <ontologia:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ejemplo.com</ontologia:url>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#Urgente -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Urgente">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#NivelMantenimiento"/>
     </owl:NamedIndividual>
     
 
