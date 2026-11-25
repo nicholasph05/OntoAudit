@@ -34,6 +34,7 @@
 
     <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#analizaSitio">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Auditoria"/>
         <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
     </owl:ObjectProperty>
@@ -274,6 +275,113 @@
     <!-- https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb -->
 
     <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#Aceptable -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Aceptable">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#EstadoSitio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#AlDia -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#AlDia">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#NivelMantenimiento"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#Critico -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Critico">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#EstadoSitio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#Excelente -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Excelente">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#EstadoSitio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#PracticaCargaRapida -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaCargaRapida">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Rendimiento"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#PracticaHTMLValido -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaHTMLValido">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Accesibilidad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#PracticaMetaDescripcion -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaMetaDescripcion">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SEO"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#PracticaPaginaLiviana -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaPaginaLiviana">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Rendimiento"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#PracticaTextoAlternativo -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaTextoAlternativo">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Accesibilidad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#PracticaTituloDescriptivo -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#PracticaTituloDescriptivo">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SEO"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#Preventivo -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Preventivo">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#NivelMantenimiento"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#Urgente -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Urgente">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#NivelMantenimiento"/>
+    </owl:NamedIndividual>
     
 
 
