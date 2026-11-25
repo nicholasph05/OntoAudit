@@ -22,15 +22,6 @@
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
-        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
-        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
-    </rdf:Description>
-    
-
-
     <!-- https://nicholasph05.github.io/OntoAudit/ontologia#analizaSitio -->
 
     <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#analizaSitio">
@@ -59,6 +50,20 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
         <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#BuenasPracticas"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#necesitaRecomendacion -->
+
+    <owl:ObjectProperty rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#necesitaRecomendacion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:range rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#presentaProblema"/>
+            <rdf:Description rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#sugiereAccion"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -251,6 +256,41 @@
     
 
 
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaAccesibilidad -->
+
+    <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaAccesibilidad">
+        <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+    </owl:Class>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaRendimiento -->
+
+    <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaRendimiento">
+        <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+    </owl:Class>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaSEO -->
+
+    <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaSEO">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#incumplePractica"/>
+                        <owl:someValuesFrom rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SEO"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Problema"/>
+    </owl:Class>
+    
+
+
     <!-- https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion -->
 
     <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Recomendacion"/>
@@ -269,6 +309,81 @@
 
     <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SEO">
         <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#BuenasPracticas"/>
+    </owl:Class>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#SitioAceptable -->
+
+    <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SitioAceptable">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#tieneNivel"/>
+                        <owl:hasValue rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Preventivo"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#tieneEstado"/>
+                <owl:hasValue rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Aceptable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#SitioCritico -->
+
+    <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SitioCritico">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#tieneNivel"/>
+                        <owl:hasValue rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Urgente"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#tieneEstado"/>
+                <owl:hasValue rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Critico"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#SitioExcelente -->
+
+    <owl:Class rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SitioExcelente">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#tieneNivel"/>
+                        <owl:hasValue rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#AlDia"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#tieneEstado"/>
+                <owl:hasValue rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Excelente"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -520,6 +635,18 @@
 
     <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#Urgente">
         <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#NivelMantenimiento"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nicholasph05.github.io/OntoAudit/ontologia#sitioEjemplo -->
+
+    <owl:NamedIndividual rdf:about="https://nicholasph05.github.io/OntoAudit/ontologia#sitioEjemplo">
+        <rdf:type rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#SitioWeb"/>
+        <ontologia:presentaProblema rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaCargaLenta"/>
+        <ontologia:presentaProblema rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#ProblemaImagenesSinAlt"/>
+        <ontologia:tieneNivel rdf:resource="https://nicholasph05.github.io/OntoAudit/ontologia#Urgente"/>
+        <ontologia:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ejemplo.com</ontologia:url>
     </owl:NamedIndividual>
     
 
