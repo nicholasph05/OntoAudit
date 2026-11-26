@@ -6,7 +6,11 @@ Uso por consola:
 """
 import asyncio
 import contextlib
+import signal
+import types
 
+import pyjabber.server
+from pyjabber.queues.QueueManager import QueueManager
 from pyjabber.server import Server
 from pyjabber.server_parameters import Parameters
 from spade.container import Container
@@ -28,6 +32,11 @@ class Plataforma:
         import loguru
         loguru.logger.remove()   # el servidor XMPP es muy verboso
         Container().reset()      # el contenedor de SPADE usa el event loop actual
+        # pyjabber instala sus propios manejadores de Ctrl+C, que chocan con los de
+        # uvicorn y fallan fuera del hilo principal: se los desactivamos.
+        pyjabber.server.signal = types.SimpleNamespace(
+            signal=lambda *a: None, SIGINT=signal.SIGINT, SIGABRT=signal.SIGABRT, SIGTERM=signal.SIGTERM)
+        QueueManager._queues.clear()   # colas internas de pyjabber: nuevas para este event loop
         servidor = Server(Parameters(host=DOMINIO, database_in_memory=True))
         self._servidor_tarea = asyncio.create_task(servidor.start())
         await asyncio.wait_for(servidor.ready.wait(), timeout=15)

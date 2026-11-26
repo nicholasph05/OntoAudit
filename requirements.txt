@@ -14,3 +14,6 @@ spade
 greenlet
 pymongo 
 mongomock
+fastapi
+uvicorn[standard]
+httpx
